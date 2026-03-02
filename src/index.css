@@ -1,25 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
 
-@theme {
+@theme inline {
+
+  /* Background & Foreground */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* UI */
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Surface */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  /* Fonts */
+  --font-sans: var(--font-poppins);
+  --font-heading: var(--font-inter);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  /* Shadows */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+}
+
+:root {
 
   /* Fonts */
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
 
+  /* Base */
+  --background: #ffffff;
+  --foreground: #000000;
+
   /* Brand */
-  --color-primary: #006972;
-  --color-primary-hover: #2CAFBA;
-  --color-primary-dark: #068E9A;
+  --primary: #006972;
+  --primary-foreground: #ffffff;
 
-  /* Accent */
-  --color-accent: #48D5E0;
-  --color-highlight: #D4C203;
+  --secondary: #2CAFBA;
+  --secondary-foreground: #ffffff;
 
-  /* Text */
-  --color-text-dark: #000000;
-  --color-white: #FFFFFF;
+  --accent: #48D5E0;
+  --accent-foreground: #000000;
 
-  --text-nav: 20px;
---text-heading: 48px;
---text-subheading: 24px;
+  --muted: #f5f5f5;
+  --muted-foreground: #666666;
+
+  /* UI */
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #006972;
+
+  /* Surface */
+  --card: #ffffff;
+  --card-foreground: #000000;
+
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+
+  /* Radius */
+  --radius: 1rem;
+
+  /* Shadow System */
+  --shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0px 8px 20px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0px 12px 32px rgba(0, 0, 0, 0.16);
+}
+
+.dark {
+
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+
+  --primary: #2CAFBA;
+  --primary-foreground: #000000;
+
+  --secondary: #006972;
+  --secondary-foreground: #ffffff;
+
+  --accent: #48D5E0;
+  --accent-foreground: #000000;
+
+  --muted: #1a1a1a;
+  --muted-foreground: #a1a1a1;
+
+  --border: #262626;
+  --input: #262626;
+  --ring: #2CAFBA;
+
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+
+  --shadow-xs: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0px 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+@layer base {
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+
+  .shadow-xs {
+    box-shadow: var(--shadow-xs);
+  }
+
+  .shadow-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-md {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-xl {
+    box-shadow: var(--shadow-xl);
+  }
+
 }
