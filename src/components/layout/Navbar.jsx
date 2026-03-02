@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import Container from "../common/Container";
 
 const Navbar = () => {
+
   const [open, setOpen] = useState(false);
 
   const navLinksLeft = [
@@ -18,69 +20,75 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full fixed top-0 z-50 bg-white border-b border-primary shadow-sm" style={{ fontSize: "var(--text-nav)" }}>
+    <nav className="w-full fixed top-0 z-50 bg-white/60 backdrop-blur-s h-[81px] rounded-b-[10px] border-b border-white/10 shadow-sm">
 
-      {/* Desktop Navbar */}
-      <div className="hidden md:grid grid-cols-3 items-center max-w-7xl mx-auto px-6 py-3">
+      <Container>
 
-        {/* Left Links */}
-        <ul className="flex justify-start gap-6 text-sm font-medium">
-          {navLinksLeft.map((link, i) => (
-            <li key={i}>
-              <Link to={link.path} className="text-primary hover:text-highlight transition-colors duration-300">
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Desktop Navbar */}
+        <div className="hidden md:grid grid-cols-3 items-center h-[81px]">
 
-        {/* Center Logo */}
-        <div className="flex justify-center">
-          <img
-            src="/images/logo.png"
-            alt="logo"
-            className="h-12"
-          />
+          {/* Left */}
+          <ul className="flex items-center justify-start gap-6 h-full font-poppins text-nav text-primary">
+            {navLinksLeft.map((link, i) => (
+              <li key={i}>
+                <Link to={link.path} className="hover:text-highlight transition">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Center Logo */}
+          <div className="flex items-center justify-center h-full">
+            <img
+              src="/images/sapsaa-logo.svg"
+              alt="logo"
+              className="h-[80px] object-contain scale-[1.8] translate-y-[30px]"
+            />
+          </div>
+
+          {/* Right */}
+          <ul className="flex items-center justify-end gap-6 h-full font-poppins text-nav text-primary">
+            {navLinksRight.map((link, i) => (
+              <li key={i}>
+                <Link to={link.path} className="hover:text-highlight transition">
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
         </div>
 
-        {/* Right Links */}
-        <ul className="flex justify-end gap-6 text-sm font-medium">
-          {navLinksRight.map((link, i) => (
-            <li key={i}>
-              <Link to={link.path} className="text-primary hover:text-highlight transition-colors duration-300">
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Mobile Navbar */}
+        <div className="md:hidden flex justify-between items-center h-[81px]">
 
-      </div>
+          <img
+            src="/images/sapsaa-logo.svg"
+            alt="logo"
+            className="h-[70px] object-contain"
+          />
 
-      {/* Mobile Navbar */}
-      <div className="md:hidden flex justify-between items-center px-4 py-3">
-        <img
-          src="/images/logo.png"
-          alt="logo"
-          className="h-10"
-        />
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-primary text-3xl"
+          >
+            ☰
+          </button>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="text-3xl text-primary p-2"
-        >
-          ☰
-        </button>
-      </div>
+        </div>
+
+      </Container>
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-white shadow-md px-4 py-4 space-y-4">
+        <div className="md:hidden bg-primary px-6 pb-6 space-y-4 text-white font-poppins text-nav">
 
           {[...navLinksLeft, ...navLinksRight].map((link, i) => (
             <Link
               key={i}
               to={link.path}
-              className="block border-b border-gray-100 pb-2 text-primary hover:text-highlight transition-colors"
+              className="block border-b border-white/20 pb-2"
               onClick={() => setOpen(false)}
             >
               {link.name}
@@ -89,6 +97,7 @@ const Navbar = () => {
 
         </div>
       )}
+
     </nav>
   );
 };

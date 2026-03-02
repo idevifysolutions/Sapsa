@@ -1,8 +1,9 @@
+import HeroSection from "../../components/home/HeroSection";
+
 const Landing = () => {
     return (
         <div className="page landing">
-            <h1>Welcome to Sapsaa</h1>
-            <p>This is the landing page content.</p>
+            <HeroSection />
         </div>
     );
 };
