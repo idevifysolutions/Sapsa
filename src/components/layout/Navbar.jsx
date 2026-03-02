@@ -18,7 +18,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full fixed top-0 z-50 bg-gradient-to-r from-teal-300 to-cyan-200 shadow-md">
+    <nav className="w-full fixed top-0 z-50 bg-white border-b border-primary shadow-sm" style={{ fontSize: "var(--text-nav)" }}>
 
       {/* Desktop Navbar */}
       <div className="hidden md:grid grid-cols-3 items-center max-w-7xl mx-auto px-6 py-3">
@@ -27,7 +27,7 @@ const Navbar = () => {
         <ul className="flex justify-start gap-6 text-sm font-medium">
           {navLinksLeft.map((link, i) => (
             <li key={i}>
-              <Link to={link.path} className="hover:text-blue-700">
+              <Link to={link.path} className="text-primary hover:text-highlight transition-colors duration-300">
                 {link.name}
               </Link>
             </li>
@@ -47,7 +47,7 @@ const Navbar = () => {
         <ul className="flex justify-end gap-6 text-sm font-medium">
           {navLinksRight.map((link, i) => (
             <li key={i}>
-              <Link to={link.path} className="hover:text-blue-700">
+              <Link to={link.path} className="text-primary hover:text-highlight transition-colors duration-300">
                 {link.name}
               </Link>
             </li>
@@ -66,7 +66,7 @@ const Navbar = () => {
 
         <button
           onClick={() => setOpen(!open)}
-          className="text-2xl"
+          className="text-3xl text-primary p-2"
         >
           ☰
         </button>
@@ -80,7 +80,7 @@ const Navbar = () => {
             <Link
               key={i}
               to={link.path}
-              className="block border-b pb-2"
+              className="block border-b border-gray-100 pb-2 text-primary hover:text-highlight transition-colors"
               onClick={() => setOpen(false)}
             >
               {link.name}
