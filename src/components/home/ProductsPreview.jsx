@@ -151,7 +151,13 @@ const ProductsPreview = () => {
            items-center
            gap-2
           ">
-                        <span>Explore Products</span><span className="ml-2"><img src="/images/BackArrow.png" alt="" /></span>
+                        <span className=" 
+            text-foreground
+            px-6
+            py-2
+            text-[16px]
+            font-semibold
+            ">Explore Products</span><span className="ml-2"><img src="/images/BackArrow.png" alt="" /></span>
                     </button>
                 </div>
 

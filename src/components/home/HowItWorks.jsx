@@ -30,16 +30,19 @@ const steps = [
 
 const infoCards = [
   {
+    icon: "/images/Goal.png",
     title: "Our Vision",
     text:
       "At Sapsaa, our vision is to be Maharashtra’s most trusted packaged drinking water brand. We deliver pure, safe, and hygienic water through advanced purification technology. Our goal is to ensure healthy hydration while setting new standards of quality and trust.",
   },
   {
+    icon:"/images/Mission.png",
     title: "Our Mission",
     text:
       "At Sapsaa, our mission is to deliver pure, safe, and hygienic packaged drinking water across Maharashtra using advanced RO and UV purification technology. We are committed to maintaining the highest quality standards while ensuring healthy and reliable hydration for all.",
   },
   {
+    icon:"/images/Sustainability.png",
     title: "Core Values",
     text: [
       "Purity First",
@@ -125,9 +128,12 @@ const HowItWorks = () => {
                             <div key={i} className=" w-[280px] md:w-[300px] lg:w-[350px] h-[300px] md:h-[300px] lg:h-[350px] rounded-[160px] bg-[linear-gradient(90deg,rgba(112, 130, 133, 0.47)_10%,#6A808A_47.12%)] flex flex-col items-center text-center px-10 pt-12 shadow-lg " >
 
                                 {/* Icon */}
-                                <div className="text-primary text-3xl mb-4">
-                                    {card.icon}
-                                </div>
+                             
+<img
+  src={card.icon}
+  alt={card.title}
+  className="w-[42px] h-[42px] mb-4 object-contain"
+/>
 
                                 {/* Title */}
                                 <h3 className="font-semibold text-[20px] mb-4">
@@ -136,7 +142,7 @@ const HowItWorks = () => {
 
                                 {/* Content */}
                                 {Array.isArray(card.text) ? (
-                                    <ul className="text-sm space-y-1 text-muted-foreground">
+                                    <ul className="text-sm space-y-1 text-foreground">
                                         {card.text.map((item, idx) => (
                                             <li key={idx}>• {item}</li>
                                         ))}
