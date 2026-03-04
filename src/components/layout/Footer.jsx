@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Container from "../common/Container";
 import {
     FaInstagram,
@@ -32,11 +33,21 @@ const Footer = () => {
                     <div>
                         <h3 className="font-poppins text-nav mb-4">Useful Links</h3>
                         <ul className="space-y-2 text-sm">
-                            <li>Home</li>
-                            <li>About</li>
-                            <li>Our Products</li>
-                            <li>Quality Reports</li>
-                            <li>FAQ’s</li>
+                            <li>
+                                <Link to="/" className="hover:text-highlight transition">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/about" className="hover:text-highlight transition">About</Link>
+                            </li>
+                            <li>
+                                <Link to="/products" className="hover:text-highlight transition">Our Products</Link>
+                            </li>
+                            <li>
+                                <Link to="/quality" className="hover:text-highlight transition">Quality Reports</Link>
+                            </li>
+                            <li>
+                                <Link to="/faq" className="hover:text-highlight transition">FAQ’s</Link>
+                            </li>
                         </ul>
                     </div>
 

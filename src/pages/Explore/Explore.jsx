@@ -1,10 +1,13 @@
+import React from 'react'
+import ExplreHero from '../../components/explore/ExploreHero'
+import ExploreWater from '../../components/explore/ExploreWater'
 const Explore = () => {
-    return (
-        <div className="page explore">
-            <h1>Explore</h1>
-            <p>Explore our features and services.</p>
-        </div>
-    );
-};
+  return (<>
+  <ExplreHero/>
+<ExploreWater/>
 
-export default Explore;
+  </>
+)
+}
+
+export default Explore
