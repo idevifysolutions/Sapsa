@@ -20,7 +20,7 @@ const Footer = () => {
 
                     {/* Company Info */}
                     <div className="space-y-4">
-                        <img src="/images/logo.png" alt="logo" className="h-[45px]" />
+                        <img src="/images/footerlogo.png" alt="logo" className="h-[45px]" />
                         <p className="text-sm leading-relaxed max-w-[260px]">
                             We, at Sapsaa India Private Limited, are pleased to introduce
                             ourselves as the manufacturers and bottlers of India's most
