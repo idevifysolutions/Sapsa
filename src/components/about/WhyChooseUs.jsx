@@ -1,21 +1,27 @@
 import React from "react";
 import sapImg from "../../assets/about/sap.png";
 
+import DropIcon from "../../assets/about/Drop.svg";
+import VectorIcon from "../../assets/about/Vector.svg";
+import Vector1Icon from "../../assets/about/Recycling.svg";
+import WavesIcon from "../../assets/about/Vector (1).svg";
+import CurvyDivider from "../../assets/about/v.svg";
+
 const WhyChooseUs = () => {
   return (
     <section className="bg-[#F5F6F6] py-24">
       <div className="max-w-[1200px] mx-auto px-6">
 
-        {/* Section Title */}
-        <h2 className="text-center text-[32px] font-semibold text-[#1A1A1A] mb-16">
+        {/* Title */}
+        <h2 className="text-center text-[36px] font-bold text-[#1A1A1A] mb-16">
           Why Choose Us?
         </h2>
 
-        {/* Main Layout */}
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        {/* Layout */}
+        <div className="grid lg:grid-cols-[55%_45%] gap-10 items-stretch">
 
-          {/* LEFT IMAGE */}
-          <div className="rounded-xl overflow-hidden shadow-md">
+          {/* LEFT IMAGE CARD */}
+          <div className="rounded-[28px] overflow-hidden shadow-lg h-[480px]">
             <img
               src={sapImg}
               alt="Water is Life"
@@ -23,47 +29,48 @@ const WhyChooseUs = () => {
             />
           </div>
 
-          {/* RIGHT CONTENT CARD */}
-          <div className="bg-white rounded-xl border border-gray-200 shadow-md p-10 relative">
-            
-            <h3 className="text-center text-[20px] font-semibold mb-10">
+          {/* RIGHT CARD */}
+          <div className="bg-white rounded-[28px] border border-gray-100 shadow-lg h-[480px] p-10 flex flex-col justify-center relative">
+
+            <h3 className="text-center text-[22px] font-bold mb-12 text-[#1A1A1A]">
               A Trusted Name in Bottled Water Industry
             </h3>
 
-            {/* Two Column Features */}
-            <div className="grid grid-cols-2 gap-y-10 relative">
+            {/* Features */}
+            <div className="grid grid-cols-2 gap-y-12 relative">
 
-              {/* Vertical Divider */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gray-300 -translate-x-1/2"></div>
-
-              {/* Left Column */}
-              <div className="text-center px-6">
-                <h4 className="font-semibold mb-2">Maximum Purity</h4>
-                <p className="text-gray-600 text-sm leading-[1.6]">
-                  Our processing plant ensures the best purity
-                </p>
+              {/* Divider */}
+              <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 pointer-events-none">
+                <img
+                  src={CurvyDivider}
+                  alt="divider"
+                  className="h-full opacity-30"
+                />
               </div>
 
-              <div className="text-center px-6">
-                <h4 className="font-semibold mb-2">Chlorine Free</h4>
-                <p className="text-gray-600 text-sm leading-[1.6]">
-                  Get the chlorine and heavy metal free water
-                </p>
-              </div>
+              <FeatureItem
+                icon={DropIcon}
+                title="Maximum Purity"
+                desc="Our processing plant ensures the best purity"
+              />
 
-              <div className="text-center px-6">
-                <h4 className="font-semibold mb-2">5 Step Filtration</h4>
-                <p className="text-gray-600 text-sm leading-[1.6]">
-                  Multiple step filtering ensure the best quality water
-                </p>
-              </div>
+              <FeatureItem
+                icon={VectorIcon}
+                title="Chlorine Free"
+                desc="Get the chlorine and heavy metal free water"
+              />
 
-              <div className="text-center px-6">
-                <h4 className="font-semibold mb-2">Healthy Water</h4>
-                <p className="text-gray-600 text-sm leading-[1.6]">
-                  We maintain a balanced physical PH level of water
-                </p>
-              </div>
+              <FeatureItem
+                icon={Vector1Icon}
+                title="5 Step Filtration"
+                desc="Multiple step filtering ensure the best quality water"
+              />
+
+              <FeatureItem
+                icon={WavesIcon}
+                title="Healthy Water"
+                desc="We maintain a balanced physical PH level of water"
+              />
 
             </div>
           </div>
@@ -73,5 +80,21 @@ const WhyChooseUs = () => {
     </section>
   );
 };
+
+const FeatureItem = ({ icon, title, desc }) => (
+  <div className="flex flex-col items-center text-center px-3">
+    <div className="mb-4 w-12 h-12 flex items-center justify-center">
+      <img src={icon} alt={title} className="w-full h-full object-contain" />
+    </div>
+
+    <h4 className="font-bold text-[#1A1A1A] text-base mb-2">
+      {title}
+    </h4>
+
+    <p className="text-gray-500 text-xs leading-relaxed max-w-[160px]">
+      {desc}
+    </p>
+  </div>
+);
 
 export default WhyChooseUs;
