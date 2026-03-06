@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import bottleImg from "../../assets/about/b2.svg";
+import can from "../../assets/about/can.svg";
+
+const minerals = [
+  { name: "Calcium", top: "30%", left: "100px" },
+  { name: "Magnesium", top: "50%", left: "100px" },
+  { name: "Potassium", top: "70%", left: "100px" }
+];
 
 const WaterProductsSection = () => {
+
+  const [centerProduct, setCenterProduct] = useState(can);
+
   return (
     <section className="relative w-full min-h-[650px] overflow-hidden bg-[#F5F6F6] lg:bg-transparent">
 
-      {/* ================= BACKGROUND SPLIT ================= */}
+      {/* BACKGROUND SPLIT */}
       <div className="hidden lg:flex absolute inset-0 -z-10">
         <div className="w-1/2 bg-[#2F7D7C]" />
         <div className="w-1/2 bg-[#F5F6F6]" />
@@ -13,7 +23,7 @@ const WaterProductsSection = () => {
 
       <div className="relative max-w-[1350px] mx-auto grid lg:grid-cols-2 min-h-[650px]">
 
-        {/* ================= LEFT CONTENT ================= */}
+        {/* LEFT SIDE */}
         <div className="bg-[#2F7D7C] lg:bg-transparent text-white px-6 py-16 lg:px-20 lg:py-24 flex flex-col justify-center">
 
           <h2 className="text-3xl lg:text-[45px] font-bold mb-6 leading-tight">
@@ -31,118 +41,121 @@ const WaterProductsSection = () => {
           </h4>
 
           <ul className="grid grid-cols-2 gap-y-4 gap-x-2 text-white/90 mb-12 text-base">
-            <li className="flex items-center gap-2">💧 Hydration</li>
-            <li className="flex items-center gap-2">⚡ Energy Support</li>
-            <li className="flex items-center gap-2">🧠 Brain Function</li>
-            <li className="flex items-center gap-2">🌡 Temp Control</li>
-            <li className="flex items-center gap-2">🧪 Detoxification</li>
-            <li className="flex items-center gap-2">🌿 Healthy Skin</li>
+            <li>💧 Hydration</li>
+            <li>⚡ Energy Support</li>
+            <li>🧠 Brain Function</li>
+            <li>🌡 Temp Control</li>
+            <li>🧪 Detoxification</li>
+            <li>🌿 Healthy Skin</li>
           </ul>
 
-          <div className="flex flex-wrap gap-4">
-            <button className="bg-[#F5B841] text-black px-8 py-3 rounded-full font-bold shadow-lg hover:bg-[#e0a73a] transition-all">
+          <div className="flex gap-4">
+            <button className="bg-[#F5B841] text-black px-8 py-3 rounded-full font-bold shadow-lg">
               Explore Products
             </button>
-            <button className="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#2F7D7C] transition-all">
+            <button className="border-2 border-white px-8 py-3 rounded-full font-semibold">
               Shop Now
             </button>
           </div>
         </div>
 
-        {/* ================= RIGHT CONTENT ================= */}
+        {/* RIGHT SIDE */}
         <div className="relative flex flex-col items-center lg:items-start px-6 py-16 lg:pl-40 lg:pr-16 lg:py-20 bg-[#F5F6F6]">
 
-          {/* ===== SAPSAA WATERMARK ===== */}
+          {/* WATERMARK */}
           <div className="absolute top-12 left-24 pointer-events-none">
-  <h1
-    className="text-[90px] md:text-[130px] lg:text-[150px] font-extrabold leading-none select-none text-[#e8e8e8]"
-    style={{
-      WebkitTextStroke: "1px rgba(0,0,0,0.18)",
-      textShadow: "0 6px 15px rgba(0,0,0,0.06)"
-    }}
-  >
-    SAPSAA
-  </h1>
-</div>
-
-          {/* ===== TABS ===== */}
-          <div className="relative z-10 flex flex-wrap justify-center lg:justify-start gap-3 mb-12 mt-32 lg:mt-40 w-full">
-            <button className="bg-[#2F7D7C] text-white px-8 py-3 rounded-full text-sm font-bold shadow-md">
-              Can
-            </button>
-            <button className="bg-white text-gray-500 border border-gray-200 px-8 py-3 rounded-full text-sm font-semibold hover:shadow-sm">
-              Water bottle
-            </button>
-            <button className="bg-white text-gray-500 border border-gray-200 px-8 py-3 rounded-full text-sm font-semibold hover:shadow-sm">
-              Tulsi water
-            </button>
+            <h1
+              className="text-[130px] font-extrabold text-[#e8e8e8]"
+              style={{
+                WebkitTextStroke: "1px rgba(0,0,0,0.18)"
+              }}
+            >
+              SAPSAA
+            </h1>
           </div>
 
-          {/* ===== PRODUCT CARDS ===== */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full">
-            <ProductCard title="Jumbo Can" size="5 Litre" />
-            <ProductCard title="Water bottle" size="1 Litre" />
+          {/* PRODUCT CARDS */}
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-8 w-full mt-40">
+
+            <ProductCard
+              title="Jumbo Can"
+              size="5 Litre"
+              img={can}
+              setCenterProduct={setCenterProduct}
+            />
+
+            <ProductCard
+              title="Water Bottle"
+              size="1 Litre"
+              img={bottleImg}
+              setCenterProduct={setCenterProduct}
+            />
+
           </div>
 
         </div>
       </div>
 
-      {/* ================= CENTER BOTTLE ================= */}
-      {/* ================= CENTER BOTTLE WITH HOTSPOT ================= */}
-<div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-[35%] -translate-y-1/2 z-20">
+      {/* CENTER PRODUCT */}
+      <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-[35%] -translate-y-1/2 z-20">
 
-  <div className="relative w-[420px]">
+        <div className="relative group w-[420px] flex justify-center items-center">
 
-    <img
-      src={bottleImg}
-      alt="Center Bottle"
-      className="w-full drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] object-contain"
-    />
+          <img
+  src={centerProduct}
+  alt="center product"
+  className="max-h-[520px] w-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] transition-all duration-500"
+/>
 
-    {/* ===== HOTSPOT FIXED TO BOTTLE EDGE ===== */}
-   <div className="absolute top-[35%] left-1/2 -translate-x-[120px] group">
+          {/* MINERAL HOTSPOTS */}
+          {minerals.map((mineral, i) => (
+            <div
+              key={i}
+              className="absolute opacity-0 group-hover:opacity-100 transition-all"
+              style={{ top: mineral.top, left: mineral.left }}
+            >
+              <div className="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-[#2F7D7C] text-xl font-bold">
+                +
+              </div>
 
-      {/* + Button */}
-      <div className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-[#2F7D7C] text-2xl font-bold cursor-pointer hover:scale-110 transition-all">
-        +
+              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 bg-[#2F7D7C] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap shadow-lg">
+                {mineral.name}
+              </div>
+            </div>
+          ))}
+
+        </div>
       </div>
-
-      {/* Tooltip */}
-      <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 bg-[#2F7D7C] text-white text-sm px-5 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap shadow-lg">
-        Minerals
-      </div>
-
-    </div>
-
-  </div>
-</div>
 
     </section>
   );
 };
 
-const ProductCard = ({ title, size }) => {
+const ProductCard = ({ title, size, img, setCenterProduct }) => {
+
   return (
-    <div className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-50 flex flex-col items-center group hover:shadow-xl transition-all duration-500">
-      
-      <div className="h-40 lg:h-52 flex items-center justify-center mb-6">
+    <div
+      onMouseEnter={() => setCenterProduct(img)}
+      className="bg-white p-8 rounded-[32px] shadow-sm border border-gray-50 flex flex-col items-center hover:shadow-xl transition-all"
+    >
+
+      <div className="h-40 flex items-center justify-center mb-6">
         <img
-          src={bottleImg}
+          src={img}
           alt={title}
-          className="h-full w-auto object-contain group-hover:scale-110 transition-transform duration-500"
+          className="h-full object-contain"
         />
       </div>
 
-      <div className="w-full text-center">
-        <div className="flex justify-between items-center px-2 mb-6">
-          <span className="text-gray-900 font-bold text-lg">{title}</span>
-          <span className="text-gray-400 font-medium text-sm">{size}</span>
-        </div>
-
-        <button className="w-12 h-12 rounded-full bg-[#2F7D7C] text-white flex items-center justify-center text-3xl mx-auto shadow-lg hover:bg-[#246362] active:scale-90 transition-all">
-          +
-        </button>
+      <div className="w-full flex justify-between mb-6">
+        <span className="font-bold text-lg">{title}</span>
+        <span className="text-gray-400 text-sm">{size}</span>
       </div>
+
+      <button className="w-12 h-12 rounded-full bg-[#2F7D7C] text-white text-2xl flex items-center justify-center">
+        +
+      </button>
+
     </div>
   );
 };
