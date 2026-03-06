@@ -14,9 +14,9 @@ const Navbar = () => {
   ];
 
   const navLinksRight = [
-    { name: "Certifications", path: "/explore" },
+    { name: "Certifications", path: "/certifications" },
     { name: "FAQ's", path: "/faq" },
-    { name: "Contact Us", path: "/know-more" },
+    { name: "Contact Us", path: "/contact" },
   ];
 
   return (
