@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import bottleImg from "../../assets/about/b2.svg";
+import bottleImg from "../../assets/about/b2-cropped.svg";
 import can from "../../assets/about/can.svg";
 
 const minerals = [
-  { name: "Calcium", top: "30%", left: "100px" },
-  { name: "Magnesium", top: "50%", left: "100px" },
-  { name: "Potassium", top: "70%", left: "100px" }
+  { name: "Calcium", top: "35%", left: "40px" },
+  { name: "Magnesium", top: "50%", left: "50px" },
+  { name: "Potassium", top: "65%", left: "40px" }
 ];
 
 const WaterProductsSection = () => {
@@ -96,37 +96,45 @@ const WaterProductsSection = () => {
         </div>
       </div>
 
-      {/* CENTER PRODUCT */}
-      <div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-[35%] -translate-y-1/2 z-20">
+      
+{/* CENTER PRODUCT */}
+<div className="hidden lg:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+  <div className="relative group w-[500px] h-[600px] flex justify-center items-center">
+    
+    <img
+      src={centerProduct}
+      alt="center product"
+      className={`
+        /* Increase max-height slightly to 580px */
+        max-h-[580px] w-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] 
+        transition-all duration-500 ease-in-out
+        /* Logic: If it's the 'can', make it 25% larger; otherwise, keep normal size */
+        ${centerProduct === can ? 'scale-125 translate-y-[-10px]' : 'scale-100'}
+      `}
+    />
 
-        <div className="relative group w-[420px] flex justify-center items-center">
+    {/* MINERAL HOTSPOTS */}
+    {minerals.map((mineral, i) => (
+      <div
+        key={i}
+        className="absolute opacity-0 group-hover:opacity-100 transition-all duration-300"
+        style={{ 
+          top: mineral.top, 
+          /* Centering hotspots relative to the middle of the container */
+          left: `calc(50% + ${mineral.left})` 
+        }}
+      >
+        <div className="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-[#2F7D7C] text-xl font-bold cursor-pointer hover:scale-110 transition-transform">
+          +
+        </div>
 
-          <img
-  src={centerProduct}
-  alt="center product"
-  className="max-h-[520px] w-auto object-contain drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] transition-all duration-500"
-/>
-
-          {/* MINERAL HOTSPOTS */}
-          {minerals.map((mineral, i) => (
-            <div
-              key={i}
-              className="absolute opacity-0 group-hover:opacity-100 transition-all"
-              style={{ top: mineral.top, left: mineral.left }}
-            >
-              <div className="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-[#2F7D7C] text-xl font-bold">
-                +
-              </div>
-
-              <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 bg-[#2F7D7C] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap shadow-lg">
-                {mineral.name}
-              </div>
-            </div>
-          ))}
-
+        <div className="absolute left-full ml-3 top-1/2 -translate-y-1/2 bg-[#2F7D7C] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap shadow-lg">
+          {mineral.name}
         </div>
       </div>
-
+    ))}
+  </div>
+</div>
     </section>
   );
 };
