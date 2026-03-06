@@ -11,42 +11,70 @@ const reports = [
 
 const QualityReports = () => {
     return (
-        <section className="bg-white py-12 px-4">
-            <div className="max-w-[860px] mx-auto">
+        <section style={{ backgroundColor: '#ffffff', padding: '60px 0' }}>
 
-                {/* Main Heading */}
-                <h2 className="text-[22px] md:text-[26px] font-bold text-gray-900 mb-8">
+            <div style={{ width: '1340px', margin: '0 auto' }}>
+                <h2 style={{
+                    width: '715px',
+                    height: '60px',
+                    fontFamily: "'Poppins', sans-serif",
+                    fontWeight: 600,
+                    fontSize: '48px',
+                    lineHeight: '100%',
+                    color: '#111827',
+                    marginBottom: '40px',
+                    textAlign: 'left',
+                    padding: 0,
+                    margin: '0 0 40px 0'
+                }}>
                     Quality Report  We have:
                 </h2>
 
                 {/* Report List */}
-                <div className="space-y-10">
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
                     {reports.map((report, i) => (
-                        <div key={i}>
+                        <div key={i} style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
 
-                            {/* Label + Download Icon */}
-                            <div className="flex items-center gap-3 mb-4">
-                                <span className="text-[17px] md:text-[19px] font-bold text-gray-900">
+                            {/* Label + Download Icon - Aligned to the far left */}
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '24px', textAlign: 'left' }}>
+                                <span style={{
+                                    width: 'fit-content',
+                                    height: '72px',
+                                    fontFamily: "'Poppins', sans-serif",
+                                    fontWeight: 600,
+                                    fontSize: '48px',
+                                    lineHeight: '100%',
+                                    color: '#111827',
+                                    display: 'flex',
+                                    alignItems: 'center'
+                                }}>
                                     {report.label}
                                 </span>
                                 <button
                                     title="Download Report"
-                                    className="w-[30px] h-[30px] flex items-center justify-center hover:opacity-80 transition-opacity"
+                                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
                                 >
                                     <img
                                         src="/images/download.png"
                                         alt="Download"
-                                        className="w-[26px] h-[26px] object-contain"
+                                        style={{ width: '40px', height: '40px', objectFit: 'contain' }}
                                     />
                                 </button>
                             </div>
 
-                            {/* Certificate Image */}
-                            <div className="border border-gray-200 rounded-sm overflow-hidden max-w-[440px]">
+                            {/* Certificate Image - 1100x777 CENTERED within the 1340px container */}
+                            <div style={{
+                                border: '1px solid #e5e7eb',
+                                borderRadius: '4px',
+                                overflow: 'hidden',
+                                width: '1100px',
+                                height: '777px',
+                                margin: '0 auto' // This centers the certificate specifically
+                            }}>
                                 <img
                                     src={report.image}
                                     alt={`${report.label} Certificate`}
-                                    className="w-full h-auto object-cover"
+                                    style={{ width: '1100px', height: '777px', objectFit: 'cover' }}
                                 />
                             </div>
 

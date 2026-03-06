@@ -1,73 +1,204 @@
-import Container from "../common/Container";
-
-const commitmentCards = [
-    {
-        icon: "/images/quality_pure_icon.png",
-        title: "99.9% Pure",
-        desc: "Pristine water With 99.9% Purity.",
-    },
-    {
-        icon: "/images/quality_test_icon.png",
-        title: "100+ Quality Tests",
-        desc: "Rigorous Testing for safety.",
-    },
-    {
-        icon: "/images/quality_ph_icon.png",
-        title: "PH Balanced",
-        desc: "Optimal PH level of 7.4",
-    },
-    {
-        icon: "/images/quality_filter_icon.png",
-        title: "Triple Filteration",
-        desc: "Advanced triple filteration method.",
-    },
-];
+import React from 'react';
 
 const QualityCommitment = () => {
+    const wrapperStyle = {
+        width: '100%',
+        backgroundColor: '#ffffff',
+        padding: '60px 0',
+        display: 'flex',
+        justifyContent: 'center',
+        fontFamily: "'Inter', 'Poppins', sans-serif",
+    };
+
+    const mainContainerStyle = {
+        width: '1446px',
+        backgroundColor: '#f1f7fa',
+        border: '1px solid #e1e8ed',
+        borderRadius: '16px',
+        padding: '50px 80px',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
+    };
+
+    const titleStyle = {
+        fontSize: '32px',
+        fontWeight: 600,
+        fontFamily: "'Poppins', sans-serif",
+        color: '#000000',
+        marginBottom: '16px',
+        textAlign: 'left',
+        lineHeight: '100%',
+        letterSpacing: '0%',
+        width: '477px',
+        height: '50px',
+        margin: '0 0 16px 0',
+        padding: '0',
+        display: 'flex',
+        alignItems: 'center',
+    };
+
+    const descriptionStyle = {
+        fontSize: '20px',
+        fontWeight: 400,
+        fontFamily: "'Inter', sans-serif",
+        color: '#444444',
+        lineHeight: '100%',
+        letterSpacing: '0%',
+        marginBottom: '40px',
+        width: '1286px',
+        height: 'auto',
+        minHeight: '47px',
+        textAlign: 'left',
+        display: 'flex',
+        alignItems: 'center',
+        flexWrap: 'wrap',
+    };
+
+    const gridStyle = {
+        display: 'flex',
+        gap: '24px',
+        justifyContent: 'center',
+        flexWrap: 'wrap',
+        marginTop: '40px',
+    };
+
+    const cardStyle = {
+        width: '266px',
+        height: '300px',
+        borderRadius: '16px',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: '#ffffff',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+        border: 'none',
+        position: 'relative',
+    };
+
+
+    const cardTopStyle = (imagePath) => ({
+        height: '180px',
+        width: '100%',
+        backgroundImage: `url(${imagePath})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center 20%',
+        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#e6f0f5',
+        position: 'relative',
+    });
+
+    // Green footer with React text
+    const cardBottomStyle = {
+        backgroundColor: '#006972',
+        height: '120px',
+        width: '100%',
+        padding: '20px',
+        color: '#ffffff',
+        textAlign: 'left',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        position: 'absolute',
+        bottom: 0,
+        zIndex: 10,
+        borderBottomLeftRadius: '16px',
+        borderBottomRightRadius: '16px',
+        boxSizing: 'border-box',
+    };
+
+    // Card title style
+    const cardTitleStyle = {
+        fontFamily: "'Inter', sans-serif",
+        fontWeight: 600,
+        fontSize: '24px',
+        lineHeight: '100%',
+        letterSpacing: '0%',
+        color: '#FFFFFF',
+        margin: '0 0 8px 0',
+        width: '100%',
+        height: '26px',
+        display: 'flex',
+        alignItems: 'center',
+        whiteSpace: 'nowrap',
+    };
+
+    // Card subtitle style
+    const cardSubtextStyle = {
+        fontFamily: "'Inter', sans-serif",
+        fontWeight: 400,
+        fontSize: '16px',
+        lineHeight: '100%',
+        letterSpacing: '0%',
+        color: '#FFFFFF',
+        margin: '0',
+        width: '100%',
+        height: '28px',
+        display: 'flex',
+        alignItems: 'center',
+        whiteSpace: 'nowrap',
+    };
+
+    const cardsData = [
+        {
+            id: 1,
+            image: '/images/k1.png',
+            mainText: '99.9% Pure',
+            subText: 'Pristine water With 99% Purity.'
+        },
+        {
+            id: 2,
+            image: '/images/k2.png',
+            mainText: '100+ Quality Tests',
+            subText: 'Rigorous Testing for safety.'
+        },
+        {
+            id: 3,
+            image: '/images/k3.png',
+            mainText: 'PH Balanced',
+            subText: 'Optimal PH level of 7.4'
+        },
+        {
+            id: 4,
+            image: '/images/k4.png',
+            mainText: 'Triple Filtration',
+            subText: 'Advanced triple filtration method.'
+        }
+    ];
+
     return (
-        <section className="bg-[#f0f6ff] py-16 px-4">
-            <Container>
+        <div style={wrapperStyle}>
+            <div style={mainContainerStyle}>
+                <h2 style={titleStyle}>Our Commitment To Quality</h2>
 
-                <div className="bg-white rounded-2xl shadow-sm border border-blue-100 px-8 py-10">
+                <p style={descriptionStyle}>
+                    At Sapsaa, We are dedicated to delivering the purest and safest form of water to consumer.
+                    Our rigorous testing and state-of-the-art purification processes ensure that every bottle of
+                    sapsaa water meets the highest quality standards.
+                </p>
 
-                    {/* Heading + Description */}
-                    <h2 className="text-[24px] md:text-[28px] font-bold text-gray-900 mb-3">
-                        Our Commitment To Quality
-                    </h2>
-                    <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-[900px] mb-10">
-                        At Sapsaa, We are dedicated to  delivering the purest and safest form of water to consumer . Our rigorous testing and state-of-the-art
-                        purification processes ensure that every bottle of sapsaa water meets the highest quality standards.
-                    </p>
+                <div style={gridStyle}>
+                    {cardsData.map((card) => (
+                        <div key={card.id} style={cardStyle}>
+                            {/* Top part with background image - only icon visible */}
+                            <div style={{
+                                height: '180px',
+                                width: '100%',
+                                backgroundImage: `url(${card.image})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center 20%',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundColor: '#e6f0f5',
+                            }} />
 
-                    {/* 4 Feature Cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {commitmentCards.map((card, i) => (
-                            <div
-                                key={i}
-                                className="rounded-xl overflow-hidden border border-blue-100 shadow-sm hover:shadow-md transition-shadow duration-300"
-                            >
-                                {/* Icon Area — light blue bg */}
-                                <div className="bg-[#dceeff] flex items-center justify-center h-[160px] p-4">
-                                    <img
-                                        src={card.icon}
-                                        alt={card.title}
-                                        className="h-[120px] w-[120px] object-contain"
-                                    />
-                                </div>
-
-                                {/* Label Area — teal bg */}
-                                <div className="bg-[#006972] text-white px-4 py-3 text-center">
-                                    <h4 className="font-semibold text-sm md:text-base">{card.title}</h4>
-                                    <p className="text-xs text-white/80 mt-1">{card.desc}</p>
-                                </div>
+                            {/* Green footer with React text */}
+                            <div style={cardBottomStyle}>
+                                <h3 style={cardTitleStyle}>{card.mainText}</h3>
+                                <p style={cardSubtextStyle}>{card.subText}</p>
                             </div>
-                        ))}
-                    </div>
-
+                        </div>
+                    ))}
                 </div>
-
-            </Container>
-        </section>
+            </div>
+        </div>
     );
 };
 
