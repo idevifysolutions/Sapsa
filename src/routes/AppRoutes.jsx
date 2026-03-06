@@ -7,6 +7,9 @@ import Products from "../pages/Products/Products";
 import Quality from "../pages/Quality/Quality";
 import Explore from "../pages/Explore/Explore";
 import KnowMore from "../pages/KnowMore/KnowMore";
+import Certifications from "../pages/Certifications/Certifications";
+import Faq from "../pages/Faq/Faq";
+import Contact from "../pages/Contact/Contact";
 
 const AppRoutes = () => {
   return (
@@ -19,7 +22,9 @@ const AppRoutes = () => {
         <Route path="quality" element={<Quality />} />
         <Route path="explore" element={<Explore />} />
         <Route path="know-more" element={<KnowMore />} />
-
+        <Route path="certifications" element={<Certifications />} />
+        <Route path="faq" element={<Faq />} />
+        <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>
   );
