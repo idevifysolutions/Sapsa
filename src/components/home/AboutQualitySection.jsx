@@ -11,7 +11,7 @@ const AboutQualitySection = () => {
 
                     {/* LEFT TEXT */}
                     <div className="max-w-full pt-10 space-y-3 z-20 relative">
-                        <h2 className="font-poppins font-semibold text-[36px] leading-tight">
+                        <h2 className="font-poppins font-semibold text-[34px] leading-tight">
                             SAPSAA – Pure by Nature, Perfected by Science
                         </h2>
 

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Container from "../common/Container";
 
 const Navbar = () => {
 
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navLinksLeft = [
     { name: "Home", path: "/" },
@@ -19,19 +20,39 @@ const Navbar = () => {
     { name: "Contact Us", path: "/contact" },
   ];
 
+  /* Detect Scroll */
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 60);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="w-full fixed top-0 z-50 bg-white/60 backdrop-blur-s h-[81px] rounded-b-[10px] border-b border-white/10 shadow-sm">
+    <nav
+      className={`w-full fixed top-0 z-50 h-[81px] rounded-b-[10px] border-b shadow-sm transition-all duration-300
+      ${scrolled
+        ? "bg-white border-gray-200"
+        : "bg-white/60 backdrop-blur-s border-white/10"}
+      `}
+    >
 
       <Container>
 
         {/* Desktop Navbar */}
         <div className="hidden md:grid grid-cols-3 items-center h-[81px]">
 
-          {/* Left */}
-          <ul className="flex items-center justify-start gap-6 h-full font-poppins text-nav text-primary">
+          {/* Left Links */}
+          <ul className="flex items-center justify-start gap-7 h-full font-poppins text-nav text-primary">
             {navLinksLeft.map((link, i) => (
               <li key={i}>
-                <Link to={link.path} className="hover:text-highlight transition">
+                <Link
+                  to={link.path}
+                  className="hover:text-highlight transition-colors"
+                >
                   {link.name}
                 </Link>
               </li>
@@ -47,11 +68,14 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Right */}
-          <ul className="flex items-center justify-end gap-6 h-full font-poppins text-nav text-primary">
+          {/* Right Links */}
+          <ul className="flex items-center justify-end gap-7 h-full font-poppins text-nav text-primary">
             {navLinksRight.map((link, i) => (
               <li key={i}>
-                <Link to={link.path} className="hover:text-highlight transition">
+                <Link
+                  to={link.path}
+                  className="hover:text-highlight transition-colors"
+                >
                   {link.name}
                 </Link>
               </li>
@@ -66,7 +90,7 @@ const Navbar = () => {
           <img
             src="/images/sapsaa-logo.svg"
             alt="logo"
-            className="h-[70px] object-contain"
+            className="h-[60px] object-contain"
           />
 
           <button
@@ -82,7 +106,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden bg-primary px-6 pb-6 space-y-4 text-white font-poppins text-nav">
+        <div className="md:hidden bg-primary px-6 pb-6 pt-4 space-y-4 text-white font-poppins text-nav">
 
           {[...navLinksLeft, ...navLinksRight].map((link, i) => (
             <Link

@@ -27,11 +27,21 @@ const HeroSection = () => {
                     {/* Buttons */}
                     <div className="flex flex-wrap gap-6 mt-4">
                         <Link to="/explore">
-                            <button className="bg-primary px-8 py-3.5 rounded-xl text-white hover:bg-primary-hover transition-all duration-300 shadow-[0_4px_14px_0_rgba(0,105,114,0.39)] font-semibold">
+                            <button className="bg-primary px-8 py-3.5 rounded-sm text-white hover:bg-primary-hover transition-all duration-300 shadow-[0_4px_14px_0_rgba(0,105,114,0.39)] font-semibold">
                                 Explore more
                             </button>
                         </Link>
-                        <button className="bg-white/20 backdrop-blur-lg border border-white/40 px-8 py-3.5 rounded-xl text-primary hover:bg-white/30 transition-all duration-300 shadow-md font-semibold">
+                        <button
+                            onClick={() =>
+                                window.open(
+                                    `https://wa.me/919370606858?text=${encodeURIComponent(
+                                        "Hello I am interested in your products"
+                                    )}`,
+                                    "_blank"
+                                )
+                            }
+                            className="bg-white/20 backdrop-blur-lg border border-white/40 px-8 py-3.5 rounded-sm text-primary hover:bg-white/30 transition-all duration-300 shadow-md font-semibold"
+                        >
                             Shop Now
                         </button>
                     </div>
