@@ -1,10 +1,9 @@
 import React from 'react';
-// Correct imports based on your assets/about folder structure
+import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/about/Search.svg';
 import treatIcon from '../../assets/about/Supplement_Bottle.svg';
 import consultationIcon from '../../assets/about/Consultation.svg';
-// Assuming the blue wave graphic is saved as wave-bg.svg
-import waveBg from '../../assets/about/waves.svg'; 
+import waveBg from '../../assets/about/waves.svg';
 
 const services = [
   {
@@ -27,28 +26,28 @@ const services = [
 const ServicesCards = () => {
   return (
     <section className="relative w-full py-20 bg-white font-['Poppins'] overflow-hidden">
-      
+
       {/* 1. Wave Background - Matches the blue curved graphic in Figma image_340698.png */}
       <div className="absolute top-[45%] left-0 w-full h-auto z-0 pointer-events-none transform -translate-y-1/2">
-        <img 
-          src={waveBg} 
-          alt="Wave Background" 
-          className="w-full object-cover opacity-80" 
+        <img
+          src={waveBg}
+          alt="Wave Background"
+          className="w-full object-cover opacity-80"
         />
       </div>
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 flex flex-col items-center">
-        
+
         {/* Section Heading - Matches 196x41px visual ratio */}
         <div className="text-center mb-6">
           <h3 className="text-[32px] md:text-[40px] font-bold inline-block border-b-[5px] border-black pb-2 leading-tight">
             Our Products and Services
           </h3>
         </div>
-        
+
         {/* Sub-description - Constraints to 926px width */}
         <p className="max-w-[926px] text-center text-gray-800 text-[16px] md:text-[18px] mb-16 leading-relaxed font-normal">
-          Our packed drinking water is purified through advanced RO and UV filtration to ensure every drop is clean, safe, 
+          Our packed drinking water is purified through advanced RO and UV filtration to ensure every drop is clean, safe,
           and refreshing. Hygienically bottled and quality tested, we deliver purity you can trust every day.
         </p>
 
@@ -61,9 +60,9 @@ const ServicesCards = () => {
             >
               {/* Icon Container - Matches Figma 115x126px */}
               <div className="w-[115px] h-[126px] mb-6 flex items-center justify-center">
-                <img 
-                  src={item.icon} 
-                  alt={item.title} 
+                <img
+                  src={item.icon}
+                  alt={item.title}
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -83,9 +82,12 @@ const ServicesCards = () => {
 
         {/* 3. "Know More" Button - Matches Figma Pill Outline */}
         <div className="mt-16">
-          <button className="px-14 py-3 border-[1.5px] border-[#1a4d4d] text-[#1a4d4d] rounded-full text-[18px] font-medium hover:bg-[#1a4d4d] hover:text-white transition-all duration-300 active:scale-95">
+          <Link
+            to="/know-more"
+            className="px-14 py-3 border-[1.5px] border-[#1a4d4d] text-[#1a4d4d] rounded-full text-[18px] font-medium hover:bg-[#1a4d4d] hover:text-white transition-all duration-300 active:scale-95 inline-block"
+          >
             Know More
-          </button>
+          </Link>
         </div>
       </div>
     </section>
