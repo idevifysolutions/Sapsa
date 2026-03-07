@@ -1,35 +1,43 @@
+
+
+
+
 export default function ContactInquiry() {
     return (
         <section className="w-full bg-[#b4d3d5] py-16">
-            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
+            <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-stretch">
 
                 {/* LEFT SIDE */}
-                <div>
+                <div className="flex flex-col h-full justify-between">
 
-                    <h3 className="text-[18px] font-semibold text-[#1e3a3d] mb-3">
-                        Have a question or bulk order inquiry?
-                    </h3>
+                    <div>
+                        <h3 className="text-[25px] font-semibold text-[#1e3a3d] mb-3 ">
+                            Have a question or bulk order inquiry?
+                        </h3>
 
-                    <p className="text-[14px] text-[#1e3a3d]/80 mb-8 leading-relaxed">
-                        Fill out the form and our team will contact you within <br />
-                        24 hours.
-                    </p>
-
-                    {/* Location Label */}
-                    <div className="flex mt-15 items-center gap-3 mb-4">
-                        <img src="/images/contactLocation.png" className="w-5 h-5" />
-                        <span className="font-semibold text-[14px] text-[#1e3a3d]">
-                            Find Us Here
-                        </span>
+                        <p className="text-[20px] text-[#1e3a3d]/80 mb-7 leading-snug">
+                            Fill out the form and our team will contact you within <br />
+                            24 hours.
+                        </p>
                     </div>
 
-                    {/* Map */}
-                    <div className="mt-6 rounded-md overflow-hidden shadow-sm border border-white/40">
-                        <img
-                            src="/images/contactmap.png"
-                            alt="map"
-                            className="w-full h-[220px] object-cover"
-                        />
+                    <div>
+                        {/* Location Label */}
+                        <div className="flex items-center gap-3 mb-4">
+                            <img src="/images/contactLocation.png" className="w-5 h-5" />
+                            <span className="font-semibold text-[14px] text-[#1e3a3d]">
+                                Find Us Here
+                            </span>
+                        </div>
+
+                        {/* Map */}
+                        <div className="rounded-md overflow-hidden shadow-sm border border-white/40">
+                            <img
+                                src="/images/contactmap.png"
+                                alt="map"
+                                className="w-full h-[280px] object-cover"
+                            />
+                        </div>
                     </div>
 
                 </div>

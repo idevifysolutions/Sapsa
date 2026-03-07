@@ -1,90 +1,107 @@
+
 const reports = [
-    {
-        label: "FSSAI  Report",
-        image: "/images/j1.jpg",
-    },
-    {
-        label: "FSSAI Report",
-        image: "/images/j1.jpg",
-    },
+  {
+    label: "FSSAI Report",
+    image: "/images/j1.jpg",
+  },
+  {
+    label: "FSSAI Report",
+    image: "/images/j1.jpg",
+  },
 ];
 
 const QualityReports = () => {
-    return (
-        <section style={{ backgroundColor: '#ffffff', padding: '60px 0' }}>
+  return (
+    <section style={{ backgroundColor: "#ffffff", padding: "40px 20px" }}>
+      <div style={{ maxWidth: "1340px", margin: "0 auto" }}>
 
-            <div style={{ width: '1340px', margin: '0 auto' }}>
-                <h2 style={{
-                    width: '715px',
-                    height: '60px',
+        <h5
+          style={{
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 600,
+            fontSize: "clamp(26px, 5vw, 48px)",
+            color: "#111827",
+            marginBottom: "40px",
+            paddingLeft: "30px",
+          }}
+        >
+          Quality Report We have:
+        </h5>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
+          {reports.map((report, i) => (
+            <div key={i} style={{ width: "100%" }}>
+
+              {/* Label + Download */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                  marginBottom: "20px",
+                  paddingLeft: "30px",
+                }}
+              >
+                <span
+                  style={{
                     fontFamily: "'Poppins', sans-serif",
                     fontWeight: 600,
-                    fontSize: '48px',
-                    lineHeight: '100%',
-                    color: '#111827',
-                    marginBottom: '40px',
-                    textAlign: 'left',
-                    padding: 0,
-                    margin: '0 0 40px 0'
-                }}>
-                    Quality Report  We have:
-                </h2>
+                    fontSize: "clamp(22px,4vw,42px)",
+                    color: "#111827",
+                  }}
+                >
+                  {report.label}
+                </span>
 
-                {/* Report List */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
-                    {reports.map((report, i) => (
-                        <div key={i} style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+                <button
+                  title="Download Report"
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  <img
+                    src="/images/download.png"
+                    alt="Download"
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                    }}
+                  />
+                </button>
+              </div>
 
-                            {/* Label + Download Icon - Aligned to the far left */}
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '24px', textAlign: 'left' }}>
-                                <span style={{
-                                    width: 'fit-content',
-                                    height: '72px',
-                                    fontFamily: "'Poppins', sans-serif",
-                                    fontWeight: 600,
-                                    fontSize: '48px',
-                                    lineHeight: '100%',
-                                    color: '#111827',
-                                    display: 'flex',
-                                    alignItems: 'center'
-                                }}>
-                                    {report.label}
-                                </span>
-                                <button
-                                    title="Download Report"
-                                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-                                >
-                                    <img
-                                        src="/images/download.png"
-                                        alt="Download"
-                                        style={{ width: '40px', height: '40px', objectFit: 'contain' }}
-                                    />
-                                </button>
-                            </div>
-
-                            {/* Certificate Image - 1100x777 CENTERED within the 1340px container */}
-                            <div style={{
-                                border: '1px solid #e5e7eb',
-                                borderRadius: '4px',
-                                overflow: 'hidden',
-                                width: '1100px',
-                                height: '777px',
-                                margin: '0 auto' // This centers the certificate specifically
-                            }}>
-                                <img
-                                    src={report.image}
-                                    alt={`${report.label} Certificate`}
-                                    style={{ width: '1100px', height: '777px', objectFit: 'cover' }}
-                                />
-                            </div>
-
-                        </div>
-                    ))}
-                </div>
+              {/* Certificate Image */}
+              <div
+                style={{
+                  width: "100%",
+                  maxWidth: "900px",
+                  margin: "0 auto",
+                  border: "1px solid #e5e7eb",
+                  borderRadius: "6px",
+                  overflow: "hidden",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+                }}
+              >
+                <img
+                  src={report.image}
+                  alt={`${report.label} Certificate`}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                  }}
+                />
+              </div>
 
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default QualityReports;

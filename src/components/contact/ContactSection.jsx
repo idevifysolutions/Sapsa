@@ -36,7 +36,7 @@ export default function ContactSection() {
         </div>
 
         {/* Bottle Section */}
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative hidden lg:flex justify-center lg:justify-end">
 
           {/* Bottle */}
           <img
