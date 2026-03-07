@@ -36,23 +36,24 @@ export default function ContactSection() {
         </div>
 
         {/* Bottle Section */}
-        <div className="relative flex justify-center lg:justify-end">
+      {/* Bottle Section */}
+<div className="relative hidden lg:flex justify-end">
 
-          {/* Bottle */}
-          <img
-            src="/images/contactbottlebg.png"
-            alt="water bottle"
-            className="max-h-[300px] sm:max-h-[360px] lg:max-h-[420px] z-20 object-contain"
-          />
+  {/* Bottle */}
+  <img
+    src="/images/contactbottlebg.png"
+    alt="water bottle"
+    className="max-h-[420px] z-20 object-contain"
+  />
 
-          {/* Bottle Base */}
-          <img
-            src="/images/waterbottlebase.png"
-            alt="water base"
-            className="absolute top-60 right-20 w-[250px] sm:w-[240px] lg:w-[280px] z-10 object-contain"
-          />
+  {/* Bottle Base */}
+  <img
+    src="/images/waterbottlebase.png"
+    alt="water base"
+    className="absolute top-60 right-20 w-[280px] z-10 object-contain"
+  />
 
-        </div>
+</div>
       </div>
 
       {/* Contact Cards */}

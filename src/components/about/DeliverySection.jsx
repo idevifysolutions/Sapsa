@@ -4,12 +4,12 @@ import riderImg from "../../assets/about/rider.svg";
 const DeliverySection = () => {
   return (
     <section className="relative overflow-hidden">
-      
+
       {/* Background Gradient */}
       <div className="bg-gradient-to-r from-[#0f6c6c] to-[#7fb3b3] py-24">
-        
+
         <div className="max-w-[1100px] mx-auto px-6 grid lg:grid-cols-2 items-center gap-12">
-          
+
           {/* LEFT - Rider Image */}
           <div className="flex justify-center lg:justify-start">
             <img
@@ -21,7 +21,7 @@ const DeliverySection = () => {
 
           {/* RIGHT - Content */}
           <div className="text-white">
-            
+
             <h2 className="text-[34px] font-semibold leading-[1.3] mb-6">
               Ready to get our Premium <br />
               Water delivery service.
@@ -57,7 +57,14 @@ const DeliverySection = () => {
             </ul>
 
             {/* Button */}
-            <button className="bg-white text-[#0f6c6c] px-8 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300">
+            <button onClick={() =>
+              window.open(
+                `https://wa.me/919370606858?text=${encodeURIComponent(
+                  "Hello I am interested in your products"
+                )}`,
+                "_blank"
+              )
+            } className="bg-white text-[#0f6c6c] px-8 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300">
               Our Services
             </button>
 

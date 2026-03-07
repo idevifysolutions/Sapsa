@@ -1,90 +1,71 @@
 const reports = [
-    {
-        label: "FSSAI  Report",
-        image: "/images/j1.jpg",
-    },
-    {
-        label: "FSSAI Report",
-        image: "/images/j1.jpg",
-    },
+  {
+    label: "FSSAI Report",
+    image: "/images/j1.jpg",
+  },
+  {
+    label: "FSSAI Report",
+    image: "/images/j1.jpg",
+  },
 ];
 
 const QualityReports = () => {
-    return (
-        <section style={{ backgroundColor: '#ffffff', padding: '60px 0' }}>
+  return (
+    <section className="bg-white py-16">
 
-            <div style={{ width: '1340px', margin: '0 auto' }}>
-                <h2 style={{
-                    width: '715px',
-                    height: '60px',
-                    fontFamily: "'Poppins', sans-serif",
-                    fontWeight: 600,
-                    fontSize: '48px',
-                    lineHeight: '100%',
-                    color: '#111827',
-                    marginBottom: '40px',
-                    textAlign: 'left',
-                    padding: 0,
-                    margin: '0 0 40px 0'
-                }}>
-                    Quality Report  We have:
-                </h2>
+      <div className="max-w-6xl mx-auto px-6">
 
-                {/* Report List */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
-                    {reports.map((report, i) => (
-                        <div key={i} style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+        {/* Heading */}
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900 mb-10 pl-3">
+          Quality Report We have:
+        </h2>
 
-                            {/* Label + Download Icon - Aligned to the far left */}
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '24px', textAlign: 'left' }}>
-                                <span style={{
-                                    width: 'fit-content',
-                                    height: '72px',
-                                    fontFamily: "'Poppins', sans-serif",
-                                    fontWeight: 600,
-                                    fontSize: '48px',
-                                    lineHeight: '100%',
-                                    color: '#111827',
-                                    display: 'flex',
-                                    alignItems: 'center'
-                                }}>
-                                    {report.label}
-                                </span>
-                                <button
-                                    title="Download Report"
-                                    style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
-                                >
-                                    <img
-                                        src="/images/download.png"
-                                        alt="Download"
-                                        style={{ width: '40px', height: '40px', objectFit: 'contain' }}
-                                    />
-                                </button>
-                            </div>
+        {/* Report List */}
+        <div className="flex flex-col gap-12">
 
-                            {/* Certificate Image - 1100x777 CENTERED within the 1340px container */}
-                            <div style={{
-                                border: '1px solid #e5e7eb',
-                                borderRadius: '4px',
-                                overflow: 'hidden',
-                                width: '1100px',
-                                height: '777px',
-                                margin: '0 auto' // This centers the certificate specifically
-                            }}>
-                                <img
-                                    src={report.image}
-                                    alt={`${report.label} Certificate`}
-                                    style={{ width: '1100px', height: '777px', objectFit: 'cover' }}
-                                />
-                            </div>
+          {reports.map((report, i) => (
+            <div key={i} className="flex flex-col w-full">
 
-                        </div>
-                    ))}
-                </div>
+              {/* Label + Download */}
+              <div className="flex items-center gap-4 mb-6 pl-3">
+
+                <span className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-900">
+                  {report.label}
+                </span>
+
+                <button
+                  title="Download Report"
+                  className="hover:scale-105 transition"
+                >
+                  <img
+                    src="/images/download.png"
+                    alt="Download"
+                    className="w-6 h-6 md:w-7 md:h-7 object-contain"
+                  />
+                </button>
+
+              </div>
+
+              {/* Certificate */}
+              <div className="border border-gray-200 rounded-md overflow-hidden w-full max-w-[900px] mx-auto">
+
+                <img
+                  src={report.image}
+                  alt={report.label}
+                  className="w-full h-auto object-cover"
+                />
+
+              </div>
 
             </div>
-        </section>
-    );
+          ))}
+
+        </div>
+
+      </div>
+
+    </section>
+  );
 };
 
 export default QualityReports;

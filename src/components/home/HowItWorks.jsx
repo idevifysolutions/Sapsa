@@ -104,7 +104,7 @@ const HowItWorks = () => {
                                 key={i}
                                 className="w-full max-w-[320px] min-h-[280px] lg:min-h-[330px]
         rounded-[120px]
-        bg-[linear-gradient(90deg,rgba(112,130,133,0.47)_10%,#6A808A_47.12%)]
+        bg-[linear-gradient(90deg,rgba(194, 194, 194, 0.31)_10%,#6A808A_47.12%)]
         flex flex-col items-center text-center px-8 pt-10 pb-8 shadow-lg"
                             >
 

@@ -19,7 +19,8 @@ const Quality = () => {
             <QualityHero />
             <QualityCommitment />
             <QualityAnalysis />
-            <QualityReports />
+            <QualityReports />   
+            {/* i have fixed quality report */}
         </div>
     );
 };

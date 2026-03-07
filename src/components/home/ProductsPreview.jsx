@@ -1,4 +1,5 @@
 import Container from "../common/Container";
+import {Link} from "react-router-dom";
 const products = [
     {
         title: "Organic Water Bottle",
@@ -38,7 +39,7 @@ const ProductsPreview = () => {
                 <div className="relative flex items-center justify-center">
 
                     {/* Left Arrow */}
-                    <button className="absolute left-2 md:left-0 lg:-left-10 z-20">
+                    <button className="absolute left-2 cursor-pointer md:left-0 lg:-left-10 z-20">
                         <img
                             src="/images/BackTo.png"
                             alt="Previous"
@@ -124,7 +125,7 @@ const ProductsPreview = () => {
                     </div>
 
                     {/* Right Arrow */}
-                    <button className="absolute right-2 md:right-0 lg:-right-10 z-20">
+                    <button className="absolute right-2 cursor-pointer md:right-0 lg:-right-10 z-20">
                         <img
                             src="/images/NextPage.png"
                             alt="Next"
@@ -136,6 +137,7 @@ const ProductsPreview = () => {
 
                 {/* Explore Button */}
                 <div className="text-center flex justify-center mt-12">
+                     <Link to="/products">
                     <button className="
            bg-white/10
             text-primary-foreground
@@ -150,6 +152,7 @@ const ProductsPreview = () => {
            flex
            items-center
            gap-2
+           cursor-pointer
           ">
                         <span className=" 
             text-foreground
@@ -159,6 +162,7 @@ const ProductsPreview = () => {
             font-semibold
             ">Explore Products</span><span className="ml-2"><img src="/images/BackArrow.png" alt="" /></span>
                     </button>
+                </Link>
                 </div>
 
             </Container>

@@ -4,32 +4,37 @@ export default function ContactInquiry() {
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
 
                 {/* LEFT SIDE */}
-                <div>
+                <div className="h-full flex flex-col justify-between">
 
-                    <h3 className="text-[18px] font-semibold text-[#1e3a3d] mb-3">
-                        Have a question or bulk order inquiry?
-                    </h3>
+                    <div>
+                        <h3 className="text-[24px] font-semibold text-[#1e3a3d] mb-3">
+                            Have a question or bulk order inquiry?
+                        </h3>
 
-                    <p className="text-[14px] text-[#1e3a3d]/80 mb-8 leading-relaxed">
-                        Fill out the form and our team will contact you within <br />
-                        24 hours.
-                    </p>
-
-                    {/* Location Label */}
-                    <div className="flex mt-15 items-center gap-3 mb-4">
-                        <img src="/images/contactLocation.png" className="w-5 h-5" />
-                        <span className="font-semibold text-[14px] text-[#1e3a3d]">
-                            Find Us Here
-                        </span>
+                        <p className="text-[16px] text-[#1e3a3d] mb-8 leading-relaxed">
+                            Fill out the form and our team will contact you within <br />
+                            24 hours.
+                        </p>
                     </div>
 
-                    {/* Map */}
-                    <div className="mt-6 rounded-md overflow-hidden shadow-sm border border-white/40">
-                        <img
-                            src="/images/contactmap.png"
-                            alt="map"
-                            className="w-full h-[220px] object-cover"
-                        />
+                    {/* Map Section */}
+                    <div>
+
+                        <div className="flex items-center gap-3 mb-4">
+                            <img src="/images/contactLocation.png" className="w-5 h-5" />
+                            <span className="font-semibold text-[14px] text-[#1e3a3d]">
+                                Find Us Here
+                            </span>
+                        </div>
+
+                        <div className="rounded-md overflow-hidden shadow-sm border border-white/40">
+                            <img
+                                src="/images/contactmap.png"
+                                alt="map"
+                                className="w-full h-[220px] object-cover"
+                            />
+                        </div>
+
                     </div>
 
                 </div>

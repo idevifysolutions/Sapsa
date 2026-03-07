@@ -19,39 +19,26 @@ const QualityCommitment = () => {
         boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
     };
 
-    const titleStyle = {
-        fontSize: '32px',
-        fontWeight: 600,
-        fontFamily: "'Poppins', sans-serif",
-        color: '#000000',
-        marginBottom: '16px',
-        textAlign: 'left',
-        lineHeight: '100%',
-        letterSpacing: '0%',
-        width: '477px',
-        height: '50px',
-        margin: '0 0 16px 0',
-        padding: '0',
-        display: 'flex',
-        alignItems: 'center',
-    };
+ const titleStyle = {
+  fontSize: '32px',
+  fontWeight: 600,
+  fontFamily: "'Poppins', sans-serif",
+  color: '#000000',
+  marginBottom: '16px',
+  textAlign: 'left',
+  lineHeight: '1.2',
+};
 
-    const descriptionStyle = {
-        fontSize: '20px',
-        fontWeight: 400,
-        fontFamily: "'Inter', sans-serif",
-        color: '#444444',
-        lineHeight: '100%',
-        letterSpacing: '0%',
-        marginBottom: '40px',
-        width: '1286px',
-        height: 'auto',
-        minHeight: '47px',
-        textAlign: 'left',
-        display: 'flex',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-    };
+  const descriptionStyle = {
+  fontSize: '20px',
+  fontWeight: 400,
+  fontFamily: "'Inter', sans-serif",
+  color: '#444444',
+  lineHeight: '1.5',
+  marginBottom: '40px',
+  textAlign: 'left',
+  maxWidth: '100%',
+};
 
     const gridStyle = {
         display: 'flex',

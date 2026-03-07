@@ -44,14 +44,17 @@ function CertificateCard({ item }) {
   return (
     <div className="bg-white rounded-sm p-4 shadow-sm border border-border hover:shadow-md transition flex gap-4 items-start">
 
-      {/* Certificate Preview */}
-      <div className="w-[90px] h-[120px] bg-muted rounded-md overflow-hidden flex-shrink-0">
-        <img
-          src={item.certificate}
-          alt={`${item.title} Certificate`}
-          className="w-full h-full object-cover"
-        />
-      </div>
+     
+  {/* Certificate Preview */}
+<div className="w-[120px] h-[160px] bg-muted rounded-md overflow-hidden flex-shrink-0">
+
+  <img
+    src={item.certificate}
+    alt={`${item.title} Certificate`}
+    className="w-full h-full object-cover"
+  />
+
+</div>
 
 
       {/* Content */}
